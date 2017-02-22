@@ -7,5 +7,105 @@
     android:orientation="vertical"
     tools:context="es.iesnervion.fjruiz.mov_examen_2eva.fragments.EditorFragment">
 
+    <!--TODO use Strings-->
+
+    <!--Name-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Nombre"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+
+        <EditText
+            android:id="@+id/txtName"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+    </LinearLayout>
+    <!--Age-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Edad"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/txtAge"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </LinearLayout>
+    <!--Telephone-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Teléfono"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/txtTelephone"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <!--Sex-->
+    <RadioGroup
+        android:id="@+id/rg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30sp">
+        <RadioButton
+            android:id="@+id/rbMan"
+            android:text="Hombre"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/rbWoman"
+            android:text="Mujer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"  />
+    </RadioGroup>
+
+    <!--Buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Switch
+            android:id="@+id/editorSwitch"
+            android:text="Editar"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/editorAccept"
+            android:text="Aceptar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 </LinearLayout>

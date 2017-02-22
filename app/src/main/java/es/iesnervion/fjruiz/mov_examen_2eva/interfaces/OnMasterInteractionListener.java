@@ -5,5 +5,5 @@ package es.iesnervion.fjruiz.mov_examen_2eva.interfaces;
  */
 
 public interface OnMasterInteractionListener {
-    void onFragmentInteraction(int option);
+    void onMasterInteraction(int option);
 }

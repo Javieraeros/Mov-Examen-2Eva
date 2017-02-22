@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import es.iesnervion.fjruiz.mov_examen_2eva.R;
 import es.iesnervion.fjruiz.mov_examen_2eva.interfaces.OnMasterInteractionListener;
@@ -23,7 +22,7 @@ public class MasterFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String[] options={getResources().getString(R.string.add),getResources().getString(R.string.view)};
-        setListAdapter(new ArrayAdapter<String>(getContext(), R.layout.row,R.id.RowText,options));
+        setListAdapter(new ArrayAdapter<String>(getContext(), R.layout.master_row,R.id.RowText,options));
     }
 
     @Override
@@ -52,6 +51,6 @@ public class MasterFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        mListener.onFragmentInteraction(position);
+        mListener.onMasterInteraction(position);
     }
 }

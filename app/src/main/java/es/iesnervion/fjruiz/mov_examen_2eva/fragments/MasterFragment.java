@@ -2,40 +2,33 @@ package es.iesnervion.fjruiz.mov_examen_2eva.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import es.iesnervion.fjruiz.mov_examen_2eva.R;
 import es.iesnervion.fjruiz.mov_examen_2eva.interfaces.OnMasterInteractionListener;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MasterFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link MasterFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class MasterFragment extends Fragment {
+public class MasterFragment extends ListFragment {
 
     private OnMasterInteractionListener mListener;
+    private Context context;
 
-    public MasterFragment() {
-        // Required empty public constructor
-    }
-
+    public MasterFragment(){}
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String[] options={getResources().getString(R.string.add),getResources().getString(R.string.view)};
+        setListAdapter(new ArrayAdapter<String>(getContext(), R.layout.row,R.id.RowText,options));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_master, container, false);
     }
 
@@ -55,5 +48,10 @@ public class MasterFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        mListener.onFragmentInteraction(position);
     }
 }
